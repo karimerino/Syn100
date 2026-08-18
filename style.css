@@ -1,0 +1,1794 @@
+/* =========================================================
+THE HIDDEN CLIMATE COST OF CATTLE
+GLOBAL STYLES
+========================================================= */
+
+:root {
+    --black: #050505;
+    --black-soft: #0b0b0b;
+    --panel: #101010;
+
+    --white: #f3f3ef;
+    --gray: #969696;
+    --gray-dark: #555;
+
+    --blue: #4ea9ff;
+    --blue-light: #8bc8ff;
+
+    --warning: #ff806b;
+
+    --border: rgba(255,255,255,0.14);
+}
+
+
+/* =========================================================
+RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--white);
+    font-family: "DM Sans", sans-serif;
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+LOADING SCREEN
+========================================================= */
+
+#loadingScreen {
+    position: fixed;
+    inset: 0;
+    background: var(--black);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#loadingScreen.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-content {
+    width: 260px;
+    text-align: center;
+}
+
+.loader-line {
+    height: 1px;
+    width: 0;
+    background: var(--white);
+    margin-bottom: 18px;
+    animation: loadingLine 1.8s ease forwards;
+}
+
+.loader-content p {
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gray);
+}
+
+@keyframes loadingLine {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+
+/* =========================================================
+MAIN STRUCTURE
+========================================================= */
+
+.site {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    background: var(--black);
+}
+
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar {
+    width: 270px;
+    height: 100vh;
+    background: #050505;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 34px 28px;
+    position: relative;
+    z-index: 50;
+}
+
+.brand {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.brand-mark {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-top: 2px;
+}
+
+.brand-mark span {
+    position: absolute;
+    display: block;
+    height: 1px;
+    background: white;
+    left: 0;
+}
+
+.brand-mark span:nth-child(1) {
+    width: 25px;
+    top: 4px;
+}
+
+.brand-mark span:nth-child(2) {
+    width: 17px;
+    top: 12px;
+}
+
+.brand-mark span:nth-child(3) {
+    width: 10px;
+    top: 20px;
+}
+
+.brand h1 {
+    font-size: 17px;
+    line-height: 0.95;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+}
+
+.brand p {
+    margin-top: 9px;
+    color: var(--gray);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+}
+
+.sidebar-divider {
+    height: 1px;
+    width: 100%;
+    background: var(--border);
+    margin: 40px 0 30px;
+}
+
+
+/* =========================================================
+NAVIGATION
+========================================================= */
+
+.nav-label {
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.18em;
+    color: var(--gray-dark);
+    margin-bottom: 13px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.nav-item {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--gray);
+    text-align: left;
+    padding: 13px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-size: 13px;
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        padding 0.25s ease;
+}
+
+.nav-number {
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    color: var(--gray-dark);
+    width: 18px;
+}
+
+.nav-item:hover {
+    color: white;
+    background: rgba(255,255,255,0.05);
+    padding-left: 15px;
+}
+
+.nav-item.active {
+    color: white;
+    background: rgba(255,255,255,0.08);
+}
+
+.nav-item.active .nav-number {
+    color: var(--blue);
+}
+
+
+/* =========================================================
+SIDEBAR BOTTOM
+========================================================= */
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.coordinates {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 17px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.coordinates span {
+    grid-column: 1 / -1;
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    margin-bottom: 4px;
+}
+
+.coordinates strong {
+    font-family: "Space Mono", monospace;
+    font-size: 9px;
+    font-weight: 400;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 17px;
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue);
+    box-shadow: 0 0 10px var(--blue);
+}
+
+
+/* =========================================================
+MAIN CONTENT
+========================================================= */
+
+.main-content {
+    position: relative;
+    flex: 1;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+TOP BAR
+========================================================= */
+
+.topbar {
+    position: absolute;
+    z-index: 40;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 32px;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.85),
+            transparent
+        );
+}
+
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+}
+
+.breadcrumb strong {
+    color: white;
+    font-weight: 400;
+}
+
+.learn-button {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 10px 15px;
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        border 0.25s ease;
+}
+
+.learn-button span {
+    margin-left: 10px;
+}
+
+.learn-button:hover {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+
+/* =========================================================
+MAP
+========================================================= */
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background: #111;
+}
+
+.arcgis-map {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 1;
+}
+
+
+/* =========================================================
+MAP OVERLAYS
+========================================================= */
+
+.map-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    opacity: 0.12;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,0.2) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,0.2) 1px,
+            transparent 1px
+        );
+
+    background-size: 70px 70px;
+    mix-blend-mode: screen;
+}
+
+.map-vignette {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.6),
+            transparent 35%,
+            transparent 70%,
+            rgba(0,0,0,0.2)
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.35),
+            transparent 35%,
+            rgba(0,0,0,0.45)
+        );
+}
+
+
+/* =========================================================
+MAP TITLE
+========================================================= */
+
+.map-title {
+    position: absolute;
+    z-index: 15;
+    left: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 420px;
+}
+
+.eyebrow {
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.2em;
+    color: var(--blue-light);
+    margin-bottom: 17px;
+}
+
+.map-title h2 {
+    font-size: clamp(55px, 7vw, 110px);
+    line-height: 0.82;
+    font-weight: 300;
+    letter-spacing: -0.05em;
+}
+
+.map-title h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.map-description {
+    width: 330px;
+    margin-top: 30px;
+    color: rgba(255,255,255,0.7);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+COORDINATES
+========================================================= */
+
+.map-coordinates {
+    position: absolute;
+    z-index: 15;
+    right: 32px;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 3px;
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    color: rgba(255,255,255,0.6);
+}
+
+
+/* =========================================================
+MAP CONTROLS
+========================================================= */
+
+.map-controls {
+    position: absolute;
+    z-index: 20;
+    right: 30px;
+    bottom: 125px;
+    display: flex;
+    flex-direction: column;
+}
+
+.map-controls button {
+    width: 36px;
+    height: 36px;
+    background: rgba(0,0,0,0.65);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.map-controls button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================================================
+MAP FOOTER
+========================================================= */
+
+.map-footer {
+    position: absolute;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 88px;
+    padding: 18px 35px;
+    background: rgba(0,0,0,0.82);
+    border-top: 1px solid rgba(255,255,255,0.14);
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    backdrop-filter: blur(8px);
+}
+
+.map-footer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.footer-label {
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.16em;
+    color: var(--gray-dark);
+}
+
+.map-footer strong {
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.warning {
+    color: var(--warning);
+}
+
+
+/* =========================================================
+LEARN MORE MODAL
+========================================================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.82);
+    backdrop-filter: blur(10px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.4s ease,
+        visibility 0.4s ease;
+}
+
+.modal.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.modal-inner {
+    position: relative;
+    width: min(700px, 90vw);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    padding: 50px;
+    background: #090909;
+    border: 1px solid rgba(255,255,255,0.18);
+    transform: translateY(30px);
+    transition: transform 0.5s ease;
+}
+
+.modal.open .modal-inner {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: sticky;
+    float: right;
+    top: 0;
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: white;
+    color: black;
+}
+
+.modal-inner h2 {
+    font-size: clamp(45px, 7vw, 65px);
+    line-height: 0.8;
+    font-weight: 300;
+}
+
+.modal-inner h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.modal-line {
+    height: 1px;
+    background: var(--border);
+    margin: 35px 0;
+}
+
+.modal-inner > p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-bottom: 18px;
+}
+
+.modal-meta {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 35px;
+    padding-top: 25px;
+}
+
+.modal-meta div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-meta span {
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+}
+
+.modal-meta strong {
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    font-weight: 400;
+}
+
+
+/* =========================================================
+INFORMATION PANEL
+========================================================= */
+
+.info-panel {
+    position: fixed;
+    z-index: 550;
+    left: 50%;
+    top: 50%;
+    transform:
+        translate(-50%, -50%)
+        scale(0.96);
+    width: min(600px, calc(100vw - 50px));
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+    background: rgba(8,8,8,0.98);
+    border: 1px solid rgba(255,255,255,0.18);
+    backdrop-filter: blur(20px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.info-panel.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform:
+        translate(-50%, -50%)
+        scale(1);
+}
+
+.close-panel {
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.panel-content {
+    display: flex;
+    gap: 25px;
+    padding: 40px;
+}
+
+.panel-number {
+    color: var(--blue);
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+}
+
+.panel-text h2 {
+    font-size: 28px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.panel-text p:last-child {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+STORY PANEL
+========================================================= */
+
+.story-panel {
+    position: fixed;
+    z-index: 600;
+    top: 0;
+    right: 0;
+    width: min(760px, 100vw);
+    height: 100vh;
+    background: #080808;
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition:
+        transform 0.7s cubic-bezier(0.77,0,0.175,1);
+}
+
+.story-panel.open {
+    transform: translateX(0);
+}
+
+.story-close {
+    position: fixed;
+    z-index: 30;
+    top: 20px;
+    right: 25px;
+    width: 38px;
+    height: 38px;
+    background: rgba(0,0,0,0.75);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.story-close:hover {
+    background: white;
+    color: black;
+}
+
+.story-inner {
+    width: 100%;
+    padding-bottom: 60px;
+}
+
+.story-header {
+    padding: 75px 55px 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.story-header h2 {
+    font-size: clamp(42px, 5vw, 62px);
+    line-height: 0.92;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    margin-bottom: 25px;
+}
+
+.story-header h2 span {
+    color: transparent;
+    -webkit-text-stroke: 1px white;
+}
+
+.story-intro {
+    max-width: 570px;
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.story-section {
+    padding: 55px;
+    border-bottom: 1px solid var(--border);
+}
+
+.story-section h3 {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.story-section p:not(.eyebrow) {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+BIOLOGY IMAGE
+========================================================= */
+
+.biology-image-block {
+    margin: 0 auto 35px;
+    max-width: 560px;
+}
+
+.biology-feature-image {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+IMAGE CAPTIONS
+SMALL + SAME WEBSITE FONT
+========================================================= */
+
+.image-caption {
+    margin-top: 6px !important;
+    margin-bottom: 0 !important;
+
+    color: #666 !important;
+
+    font-family: "DM Sans", sans-serif !important;
+
+    font-size: 6px !important;
+
+    font-weight: 300 !important;
+
+    line-height: 1.4 !important;
+
+    letter-spacing: 0 !important;
+}
+
+.image-caption span {
+    color: #555 !important;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 6px !important;
+    font-weight: 300 !important;
+}
+
+.image-caption em {
+    color: #555 !important;
+    font-family: "DM Sans", sans-serif !important;
+    font-size: 6px !important;
+    font-weight: 300 !important;
+}
+
+
+/* =========================================================
+BIOLOGY PATHWAY
+========================================================= */
+
+.biology-pathway {
+    margin-top: 35px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    overflow-x: auto;
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.10);
+}
+
+.pathway-item {
+    min-width: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pathway-label {
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+    color: var(--white);
+}
+
+.pathway-sub {
+    font-size: 9px;
+    color: var(--gray-dark);
+    line-height: 1.4;
+}
+
+.pathway-arrow {
+    color: var(--blue);
+    font-family: "Space Mono", monospace;
+    font-size: 12px;
+}
+
+.methane-pathway .pathway-label {
+    color: var(--warning);
+    font-size: 11px;
+}
+
+
+/* =========================================================
+METHANE DATA
+========================================================= */
+
+.methane-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+.methane-stat {
+    padding: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.025);
+}
+
+.stat-label {
+    display: block;
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.methane-stat strong {
+    display: block;
+    font-family: "Space Mono", monospace;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--blue-light);
+    margin-bottom: 10px;
+}
+
+.methane-stat p {
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+GRAPH
+========================================================= */
+
+.biology-graph-card {
+    margin-top: 30px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: #0c0c0c;
+}
+
+.graph-header {
+    padding: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.graph-label {
+    color: var(--blue-light) !important;
+    font-family: "Space Mono", monospace;
+    font-size: 7px !important;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px !important;
+}
+
+.graph-header h4 {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.graph-status {
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+}
+
+.graph-placeholder {
+    padding: 35px 25px 25px;
+}
+
+.graph-axis-y {
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+    margin-bottom: 25px;
+}
+
+.graph-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.graph-bar-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.graph-bar-row > span {
+    color: #aaa;
+    font-size: 10px;
+}
+
+.graph-bar {
+    height: 22px;
+    background: rgba(255,255,255,0.06);
+    position: relative;
+    overflow: hidden;
+}
+
+.graph-bar span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 28%;
+    background: var(--gray);
+}
+
+.graph-bar.methane-bar span {
+    width: 85%;
+    background: var(--blue);
+}
+
+.graph-note {
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    color: var(--gray-dark);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.data-source {
+    padding: 18px 22px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.data-source span {
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+}
+
+.data-source a {
+    color: var(--blue-light);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    text-decoration: none;
+}
+
+.data-source a:hover {
+    color: white;
+}
+
+
+/* =========================================================
+ARC GIS
+========================================================= */
+
+.story-map-section {
+    padding: 55px;
+    border-bottom: 1px solid var(--border);
+}
+
+.story-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.story-map-header h3 {
+    font-size: 30px;
+    line-height: 1.1;
+    font-weight: 400;
+}
+
+.map-tag {
+    padding: 7px 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--blue-light);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.15em;
+}
+
+.map-intro {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.story-map-frame {
+    width: 100%;
+    height: 420px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: #111;
+}
+
+.story-map-frame arcgis-embedded-map {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.map-caption {
+    margin-top: 15px;
+    color: var(--gray-dark);
+    font-family: "DM Sans", sans-serif;
+    font-size: 8px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+CRISPR
+========================================================= */
+
+.crispr-section {
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(78,169,255,0.025),
+            transparent
+        );
+}
+
+.crispr-feature-image {
+    margin: 30px auto 0;
+    max-width: 560px;
+}
+
+.crispr-cow-image {
+    display: block;
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.research-feature {
+    margin-top: 35px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: #0b0b0b;
+}
+
+.research-image {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    background: #111;
+}
+
+.research-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+}
+
+.research-content {
+    padding: 30px;
+}
+
+.research-label {
+    color: var(--blue-light) !important;
+    font-family: "Space Mono", monospace;
+    font-size: 7px !important;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px !important;
+}
+
+.research-content h4 {
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.research-content p {
+    font-size: 13px !important;
+}
+
+.source-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 15px;
+    border: 1px solid rgba(255,255,255,0.22);
+    color: white;
+    text-decoration: none;
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.08em;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.source-button:hover {
+    background: white;
+    color: black;
+}
+
+.research-note {
+    margin-top: 20px;
+    padding: 20px;
+    border-left: 2px solid var(--blue);
+    background: rgba(78,169,255,0.04);
+}
+
+.note-marker {
+    display: block;
+    color: var(--blue-light);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+}
+
+.research-note p {
+    margin: 0 !important;
+    font-size: 11px !important;
+}
+
+
+/* =========================================================
+MOLECULE
+========================================================= */
+
+.molecule-section {
+    padding-bottom: 65px;
+}
+
+.molecule-viewer-wrapper {
+    margin-top: 35px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: #050505;
+}
+
+.molecule-viewer-header {
+    min-height: 75px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+
+.viewer-label {
+    display: block;
+    color: var(--blue-light);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.15em;
+    margin-bottom: 7px;
+}
+
+.molecule-viewer-header h4 {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.viewer-tag {
+    color: var(--gray);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    padding: 7px 9px;
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+.molstar-viewer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: #050505;
+    overflow: hidden;
+}
+
+.molstar-viewer > * {
+    max-width: 100%;
+}
+
+.molstar-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--gray-dark);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    letter-spacing: 0.12em;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.molstar-loading.hidden {
+    opacity: 0;
+}
+
+.molstar-loading-line {
+    width: 100px;
+    height: 1px;
+    background: var(--blue);
+    animation: moleculeLoading 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes moleculeLoading {
+    from {
+        transform: scaleX(0.2);
+        opacity: 0.3;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+
+.molecule-caption {
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.molecule-caption p {
+    margin: 0 !important;
+    max-width: 500px;
+    font-size: 11px !important;
+}
+
+.molecule-caption a {
+    color: var(--blue-light);
+    font-family: "Space Mono", monospace;
+    font-size: 7px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.molecule-caption a:hover {
+    color: white;
+}
+
+.molecule-connection {
+    margin-top: 30px;
+    padding: 25px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.10);
+}
+
+.molecule-connection p:last-child {
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+BIGGER PICTURE
+========================================================= */
+
+.bigger-picture-section {
+    padding: 65px 55px;
+    border-bottom: 1px solid var(--border);
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(78,169,255,0.06),
+            transparent 65%
+        );
+}
+
+.bigger-picture-header {
+    text-align: center;
+    max-width: 570px;
+    margin: 0 auto;
+}
+
+.bigger-picture-header h3 {
+    font-size: 34px;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.bigger-picture-header > p:last-child {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+ANIMATED CLIMATE PATH
+========================================================= */
+
+.climate-pathway {
+    margin-top: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.climate-node {
+    min-width: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    position: relative;
+}
+
+.node-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.035);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.climate-node.active .node-icon {
+    transform: translateY(-9px);
+    box-shadow:
+        0 0 25px rgba(78,169,255,0.35);
+}
+
+.climate-node span {
+    font-family: "Space Mono", monospace;
+    font-size: 6px;
+    letter-spacing: 0.08em;
+    color: var(--gray);
+}
+
+.climate-line {
+    position: relative;
+    flex: 1;
+    max-width: 65px;
+    height: 1px;
+    background: rgba(255,255,255,0.18);
+    overflow: visible;
+}
+
+.traveling-particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--blue-light);
+    box-shadow:
+        0 0 8px var(--blue),
+        0 0 18px var(--blue);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation:
+        travelParticle 4s linear infinite;
+}
+
+.climate-line:nth-of-type(2) .traveling-particle {
+    animation-delay: 0.8s;
+}
+
+.climate-line:nth-of-type(3) .traveling-particle {
+    animation-delay: 1.6s;
+}
+
+.climate-line:nth-of-type(4) .traveling-particle {
+    animation-delay: 2.4s;
+}
+
+@keyframes travelParticle {
+    0% {
+        left: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        left: calc(100% - 6px);
+        opacity: 0;
+    }
+}
+
+.bigger-picture-text {
+    max-width: 570px;
+    margin: 45px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.bigger-picture-text p {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+
+/* =========================================================
+RETURN BUTTON
+========================================================= */
+
+.story-return {
+    padding: 50px 55px 20px;
+}
+
+.back-button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: white;
+    padding: 13px 18px;
+    font-family: "Space Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+.back-button:hover {
+    background: white;
+    color: black;
+}
+
+
+/* =========================================================
+STORY SCROLLBAR
+========================================================= */
+
+.story-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.story-panel::-webkit-scrollbar-track {
+    background: #080808;
+}
+
+.story-panel::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .site {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-divider,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .navigation {
+        flex-direction: row;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    .nav-item {
+        white-space: nowrap;
+    }
+
+    .main-content {
+        height: calc(100vh - 110px);
+    }
+
+    .map-title {
+        left: 25px;
+        top: 45%;
+        width: 80%;
+    }
+
+    .map-title h2 {
+        font-size: 55px;
+    }
+
+    .map-footer {
+        gap: 20px;
+        overflow-x: auto;
+    }
+
+    .map-footer > div {
+        min-width: 150px;
+    }
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-inner {
+        width: 100%;
+        max-height: calc(100vh - 30px);
+        padding: 30px;
+    }
+
+    .modal-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .story-panel {
+        width: 100vw;
+    }
+
+    .story-header {
+        padding: 65px 25px 35px;
+    }
+
+    .story-header h2 {
+        font-size: 42px;
+    }
+
+    .story-section {
+        padding: 40px 25px;
+    }
+
+    .story-map-section {
+        padding: 40px 25px;
+    }
+
+    .story-map-frame {
+        height: 350px;
+    }
+
+    .methane-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .research-image {
+        height: 220px;
+    }
+
+    .molstar-viewer {
+        height: 400px;
+    }
+
+    .molecule-caption {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .climate-pathway {
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .climate-line {
+        max-width: 35px;
+    }
+
+    .bigger-picture-section {
+        padding: 50px 25px;
+    }
+
+    .story-return {
+        padding: 40px 25px;
+    }
+
+    .biology-image-block,
+    .crispr-feature-image {
+        max-width: 100%;
+    }
+
+    .biology-feature-image,
+    .crispr-cow-image {
+        max-height: 260px;
+    }
+}
+
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
