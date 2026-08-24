@@ -1792,3 +1792,43 @@ REDUCED MOTION
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =========================================================
+FROM MOLECULE TO CLIMATE
+========================================================= */
+
+.molecule-climate-transition {
+    max-width: 560px;
+    margin: 45px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid var(--border);
+}
+
+.molecule-climate-transition .eyebrow {
+    margin-bottom: 15px;
+}
+
+.molecule-climate-transition p:last-child {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .molecule-climate-transition {
+        max-width: 100%;
+        margin-top: 35px;
+    }
+
+}
+
+.main-research-question {
+    max-width: 650px;
+}
