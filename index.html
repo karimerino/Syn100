@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,7 @@
 
     <link
         rel="preconnect"
-        href="https://fonts.googleapis.com"
+        href="https://fonts.gstatic.com"
         crossorigin
     >
 
@@ -96,37 +97,58 @@
 
                 <p class="nav-label">EXPLORE</p>
 
-                <button class="nav-item active" data-section="overview">
+                <button
+                    class="nav-item active"
+                    data-section="overview"
+                >
                     <span class="nav-number">01</span>
                     <span>Overview</span>
                 </button>
 
-                <button class="nav-item" data-section="climate">
+                <button
+                    class="nav-item"
+                    data-section="climate"
+                >
                     <span class="nav-number">02</span>
                     <span>Climate Problem</span>
                 </button>
 
-                <button class="nav-item" data-section="biology">
+                <button
+                    class="nav-item"
+                    data-section="biology"
+                >
                     <span class="nav-number">03</span>
                     <span>The Biology</span>
                 </button>
 
-                <button class="nav-item" data-section="mapping">
+                <button
+                    class="nav-item"
+                    data-section="mapping"
+                >
                     <span class="nav-number">04</span>
                     <span>Mapping Methane</span>
                 </button>
 
-                <button class="nav-item" data-section="crispr">
+                <button
+                    class="nav-item"
+                    data-section="crispr"
+                >
                     <span class="nav-number">05</span>
                     <span>Microbial Intervention</span>
                 </button>
 
-                <button class="nav-item" data-section="justice">
+                <button
+                    class="nav-item"
+                    data-section="justice"
+                >
                     <span class="nav-number">06</span>
                     <span>Climate Justice</span>
                 </button>
 
-                <button class="nav-item" data-section="future">
+                <button
+                    class="nav-item"
+                    data-section="future"
+                >
                     <span class="nav-number">07</span>
                     <span>The Future</span>
                 </button>
@@ -166,7 +188,9 @@
         <section class="main-content">
 
 
-            <!-- TOP BAR -->
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
 
             <header class="topbar">
 
@@ -209,6 +233,7 @@
                 ></div>
 
                 <div class="map-grid"></div>
+
                 <div class="map-vignette"></div>
 
 
@@ -218,18 +243,15 @@
                         CLIMATE • BIOLOGY • AGRICULTURE • JUSTICE
                     </p>
 
+
                     <h2>
                         THE HIDDEN CLIMATE COST<br>
                         <span>OF CATTLE</span>
                     </h2>
 
-                    <p class="map-description">
 
-                        Exploring how cattle, methane producing
-                        microorganisms, emerging biotechnology, and
-                        agricultural communities are connected through
-                        the climate crisis.
-
+                    <p class="eyebrow main-research-question">
+                        How can CRISPR based approaches reduce cattle methane emissions while considering how climate change and its solutions affect different communities, agricultural systems, and environments?
                     </p>
 
                 </div>
@@ -278,23 +300,9 @@
 
                     </div>
 
-
-                    <div>
-
-                        <span class="footer-label">
-                            QUESTION
-                        </span>
-
-                        <strong class="warning">
-                            CAN BIOLOGY HELP?
-                        </strong>
-
-                    </div>
-
                 </div>
 
             </section>
-
 
         </section>
 
@@ -320,16 +328,20 @@
                 ×
             </button>
 
+
             <p class="eyebrow">
                 ABOUT THE PROJECT
             </p>
+
 
             <h2>
                 HIDDEN<br>
                 <span>CLIMATE COST</span>
             </h2>
 
+
             <div class="modal-line"></div>
+
 
             <p>
                 This project explores the relationship between cattle
@@ -337,20 +349,24 @@
                 emerging biotechnology, and climate change.
             </p>
 
+
             <p>
                 Using GIS, scientific research, molecular biology, and
                 visual storytelling, we investigate where cattle
                 production occurs, how methane is produced inside the
                 rumen, and whether emerging technologies such as CRISPR
-                could contribute to future climate solutions.
+                could contribute to future approaches for reducing
+                methane emissions.
             </p>
+
 
             <p>
                 We also consider the people and agricultural communities
                 connected to these systems, asking who has access to new
-                technologies, who benefits from them, and how climate
-                solutions can be developed responsibly and equitably.
+                technologies, who benefits from them, and how new
+                approaches can be developed responsibly and fairly.
             </p>
+
 
             <div class="modal-meta">
 
@@ -378,50 +394,922 @@
 
 
     <!-- =====================================================
-         INFORMATION PANEL
+         CLIMATE PROBLEM STORY PANEL
     ====================================================== -->
 
-    <section
-        id="infoPanel"
-        class="info-panel"
+    <div
+        id="climatePanel"
+        class="story-panel climate-panel"
         aria-hidden="true"
     >
 
         <button
-            id="closePanel"
-            class="close-panel"
-            aria-label="Close information panel"
+            id="closeClimate"
+            class="story-close"
+            aria-label="Close Climate Problem section"
         >
             ×
         </button>
 
-        <div class="panel-content">
 
-            <div class="panel-number">
-                02
-            </div>
+        <div class="story-inner">
 
-            <div class="panel-text">
+
+            <!-- =================================================
+                 CLIMATE HEADER
+            ================================================== -->
+
+            <div class="story-header">
 
                 <p class="eyebrow">
-                    THE PROBLEM
+                    02 • CLIMATE PROBLEM
                 </p>
 
-                <h2 id="panelTitle">
-                    Methane is a climate problem.
+                <h2>
+                    Methane is a climate<br>
+                    <span>problem.</span>
                 </h2>
 
-                <p id="panelDescription">
-                    Cattle release methane during digestion,
-                    primarily through the activity of methanogenic
-                    archaea in the rumen.
+                <p class="story-intro">
+                    Cattle methane is produced through a biological
+                    process inside the rumen, but once methane enters
+                    the atmosphere, its effects extend far beyond the
+                    individual animal.
                 </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 01
+                 WHY METHANE MATTERS
+            ================================================== -->
+
+            <div class="story-section">
+
+                <p class="eyebrow">
+                    01 • WHY METHANE MATTERS
+                </p>
+
+                <h3>
+                    A small amount of gas can have a large effect on climate.
+                </h3>
+
+                <p>
+                    Methane, or CH4, is a greenhouse gas. Like CO2,
+                    it absorbs heat in the atmosphere and contributes
+                    to global warming. Methane is especially important
+                    because it traps much more heat than CO2 over a
+                    100 year period.
+                </p>
+
+                <p>
+                    Methane also stays in the atmosphere for a much
+                    shorter time than CO2. Its atmospheric lifetime is
+                    about 12 years, while the effects of CO2 can last
+                    for hundreds to thousands of years.
+                </p>
+
+                <p>
+                    This does not mean methane is more important than
+                    CO2 in every way. CO2 remains the largest driver of
+                    long term warming. Instead, methane represents an
+                    important opportunity for reducing the rate of
+                    warming in the near term.
+                </p>
+
+
+                <!-- =================================================
+                     METHANE DATA CARD
+                ================================================== -->
+
+                <div class="methane-impact-card">
+
+                    <div class="impact-header">
+
+                        <p class="graph-label">
+                            METHANE AT A GLANCE
+                        </p>
+
+                        <span class="graph-status">
+                            CLIMATE DATA
+                        </span>
+
+                    </div>
+
+
+                    <div class="impact-stat">
+
+                        <div class="impact-number">
+                            28×
+                        </div>
+
+                        <div class="impact-copy">
+
+                            <strong>
+                                THE WARMING EFFECT
+                            </strong>
+
+                            <p>
+                                Over 100 years, methane has about
+                                28 times the warming potential of
+                                the same amount of CO2.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="impact-explanation">
+
+                        <div class="impact-item">
+
+                            <span>
+                                METHANE
+                            </span>
+
+                            <p>
+                                Atmospheric lifetime of about
+                                12 years.
+                            </p>
+
+                        </div>
+
+
+                        <div class="impact-item">
+
+                            <span>
+                                CO2
+                            </span>
+
+                            <p>
+                                Can influence climate for
+                                hundreds to thousands of years.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="data-source">
+
+                    <span>
+                        SOURCE
+                    </span>
+
+                    <a
+                        href="https://www.unep.org/explore-topics/energy/facts-about-methane"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        United Nations Environment Programme • Facts About Methane ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 02
+                 WHY CATTLE MATTER
+            ================================================== -->
+
+            <div class="story-section">
+
+                <p class="eyebrow">
+                    02 • CATTLE + METHANE
+                </p>
+
+                <h3>
+                    Cattle are part of a much larger methane system.
+                </h3>
+
+                <p>
+                    Agriculture contributes a significant share of
+                    global greenhouse gas emissions, and livestock
+                    production is an important source of methane.
+                    Cattle produce methane mainly because of the
+                    microorganisms living inside their digestive system.
+                </p>
+
+                <p>
+                    Inside the rumen, microbes break down plant
+                    material through fermentation. Methanogenic
+                    archaea use some of the products of this process
+                    and produce methane. The methane then leaves the
+                    animal, primarily through belching.
+                </p>
+
+                <p>
+                    One cow producing methane may seem like a small
+                    event. The climate significance comes from the
+                    scale of cattle production. When this biological
+                    process occurs across large livestock populations,
+                    the combined emissions become part of the global
+                    greenhouse gas problem.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 03
+                 GLOBAL PATTERNS
+            ================================================== -->
+
+            <div class="story-section">
+
+                <p class="eyebrow">
+                    03 • GLOBAL PATTERNS
+                </p>
+
+                <h3>
+                    Where these emissions come from may be surprising.
+                </h3>
+
+                <p>
+                    Cattle are one of the largest sources of methane
+                    from livestock. Agriculture as a whole contributes
+                    about 14.5 percent of global greenhouse gas
+                    emissions, and cattle are a major part of the
+                    methane produced through livestock digestion.
+                </p>
+
+                <p>
+                    Methane is much more powerful than CO2 at trapping
+                    heat over a 100 year period. At the same time,
+                    methane breaks down much faster in the atmosphere.
+                    This matters because reducing methane emissions
+                    today could help slow the rate of warming sooner,
+                    while reductions in CO2 remain essential for
+                    limiting long term climate change.
+                </p>
+
+                <p>
+                    Where these emissions come from may be surprising.
+                    Wealthier countries in the Global North, especially
+                    the United States and Europe, produce much of the
+                    world's milk and a large amount of its beef. However,
+                    a large share of cattle related methane emissions
+                    comes from countries in the Global South.
+                </p>
+
+                <p>
+                    As of 2022, about 71 percent of dairy emissions
+                    and 77 percent of beef emissions came from
+                    non OECD countries. This difference is connected
+                    to differences in agricultural systems, production
+                    efficiency, animal productivity, feed, and access
+                    to resources.
+                </p>
+
+                <p>
+                    In the United States, cattle account for about
+                    2 percent of total direct greenhouse gas emissions.
+                    Looking at these numbers together shows why the
+                    climate problem cannot be understood only by asking
+                    where cattle are raised. We also need to understand
+                    how agricultural systems differ between regions
+                    and how emissions are connected to the communities
+                    that depend on those systems.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 GLOBAL EMISSIONS VISUAL
+            ================================================== -->
+
+            <div class="story-section">
+
+                <div class="data-visual-card">
+
+                    <div class="data-visual-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                THE BIGGER PICTURE
+                            </p>
+
+                            <h4>
+                                Methane is one part of the
+                                greenhouse gas problem.
+                            </h4>
+
+                        </div>
+
+                        <span class="map-tag">
+                            DATA
+                        </span>
+
+                    </div>
+
+
+                    <div class="data-visual-body">
+
+                        <div class="data-bar-row">
+
+                            <div class="data-bar-label">
+
+                                <span>
+                                    AGRICULTURE
+                                </span>
+
+                                <strong>
+                                    14.5%
+                                </strong>
+
+                            </div>
+
+                            <div class="data-bar-track">
+
+                                <div
+                                    class="data-bar-fill"
+                                    style="width:14.5%;"
+                                ></div>
+
+                            </div>
+
+                            <p>
+                                Estimated share of global greenhouse
+                                gas emissions associated with
+                                agriculture.
+                            </p>
+
+                        </div>
+
+
+                        <div class="data-visual-note">
+
+                            <span>
+                                IMPORTANT
+                            </span>
+
+                            <p>
+                                Agriculture includes many sources of
+                                greenhouse gases. Cattle methane is
+                                one part of this larger system.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p class="image-caption">
+
+                    Agriculture produces greenhouse gases through
+                    several processes, including livestock methane,
+                    manure management, fertilizer use, land use change,
+                    and other agricultural activities. This means
+                    cattle methane should be understood as one part
+                    of a larger climate system.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 04
+                 GIS MAP SHELL
+            ================================================== -->
+
+            <div class="story-map-section climate-map-section">
+
+                <div class="story-map-header">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            04 • SPATIAL DATA
+                        </p>
+
+                        <h3>
+                            Where does methane fit into
+                            the larger greenhouse gas problem?
+                        </h3>
+
+                    </div>
+
+                    <span class="map-tag">
+                        ARC GIS
+                    </span>
+
+                </div>
+
+
+                <p class="map-intro">
+                    Greenhouse gas emissions are not distributed
+                    evenly across space. Mapping emissions can help
+                    us see where methane is concentrated, where total
+                    greenhouse gas emissions are high, and how those
+                    patterns overlap with cattle production.
+                </p>
+
+
+                <!-- =================================================
+                     MAP PLACEHOLDER
+                ================================================== -->
+
+                <div class="story-map-frame climate-map-placeholder">
+
+                    <div class="map-placeholder-content">
+
+                        <div class="map-placeholder-grid"></div>
+
+                        <div class="map-placeholder-center">
+
+                            <span class="placeholder-icon">
+                                GIS
+                            </span>
+
+                            <p class="eyebrow">
+                                ARC GIS MAP
+                            </p>
+
+                            <h4>
+                                Greenhouse Gas Emissions
+                            </h4>
+
+                            <p>
+                                Methane • CO2 • Livestock
+                            </p>
+
+                            <span class="placeholder-status">
+                                MAP IN DEVELOPMENT
+                            </span>
+
+                        </div>
+
+                        <div class="placeholder-corner top-left">
+                            METHANE
+                        </div>
+
+                        <div class="placeholder-corner top-right">
+                            CO2
+                        </div>
+
+                        <div class="placeholder-corner bottom-left">
+                            LIVESTOCK
+                        </div>
+
+                        <div class="placeholder-corner bottom-right">
+                            REGION
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <p class="map-caption">
+
+                    <strong>
+                        Mapping the larger greenhouse gas picture.
+                    </strong>
+
+                    This map will show greenhouse gas emissions
+                    across regions, with methane highlighted alongside
+                    total emissions and cattle or livestock distribution.
+                    Comparing these layers will help us examine where
+                    methane contributes to the broader greenhouse gas
+                    problem and where cattle production is concentrated.
+
+                </p>
+
+
+                <div class="map-methodology">
+
+                    <div>
+
+                        <span>
+                            PLANNED LAYERS
+                        </span>
+
+                        <p>
+                            Methane emissions
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            TOTAL EMISSIONS
+                        </span>
+
+                        <p>
+                            Greenhouse gas emissions
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            AGRICULTURE
+                        </span>
+
+                        <p>
+                            Cattle and livestock distribution
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            REGION
+                        </span>
+
+                        <p>
+                            County or regional boundaries
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 05
+                 WHY LOCATION MATTERS
+            ================================================== -->
+
+            <div class="story-section">
+
+                <p class="eyebrow">
+                    05 • WHY LOCATION MATTERS
+                </p>
+
+                <h3>
+                    Where cattle are raised matters.
+                </h3>
+
+                <p>
+                    Cattle are raised in places where people depend
+                    on agriculture for food, jobs, and income. These
+                    systems also depend on land, water, feed, labor,
+                    and other resources.
+                </p>
+
+                <p>
+                    Because of this, reducing methane is not only
+                    about changing what happens inside the cow.
+                    Any new approach would also need to work within
+                    the agricultural systems where cattle are raised.
+                </p>
+
+                <p>
+                    Mapping helps us see these differences from place
+                    to place. It connects the global climate problem
+                    to the actual regions, farms, and communities
+                    where cattle production takes place.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 06
+                 NEAR TERM ACTION
+            ================================================== -->
+
+            <div class="story-section climate-action-section">
+
+                <p class="eyebrow">
+                    06 • WHY REDUCE METHANE?
+                </p>
+
+                <h3>
+                    Cutting methane can help slow warming sooner.
+                </h3>
+
+                <p>
+                    Because methane remains in the atmosphere for a
+                    much shorter time than CO2, reducing methane
+                    emissions can have a relatively fast effect on
+                    the amount of methane in the atmosphere.
+                </p>
+
+                <p>
+                    This does not mean methane reductions can replace
+                    CO2 reductions. Both are necessary. CO2 determines
+                    much of the long term warming trajectory, while
+                    methane reductions can help slow the rate of
+                    warming in the near term.
+                </p>
+
+
+                <div class="climate-action-card">
+
+                    <div class="action-step">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            REDUCE METHANE
+                        </strong>
+
+                        <p>
+                            Less methane enters the atmosphere.
+                        </p>
+
+                    </div>
+
+
+                    <div class="action-arrow">
+                        →
+                    </div>
+
+
+                    <div class="action-step">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            LESS HEAT TRAPPED
+                        </strong>
+
+                        <p>
+                            The atmosphere contains less
+                            methane to trap heat.
+                        </p>
+
+                    </div>
+
+
+                    <div class="action-arrow">
+                        →
+                    </div>
+
+
+                    <div class="action-step">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            SLOWER NEAR TERM WARMING
+                        </strong>
+
+                        <p>
+                            Reducing methane can help slow
+                            the rate of warming.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="data-source">
+
+                    <span>
+                        SCIENTIFIC CONTEXT
+                    </span>
+
+                    <a
+                        href="https://www.unep.org/explore-topics/energy/facts-about-methane"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        United Nations Environment Programme • Methane ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SECTION 07
+                 TRANSITION TO BIOLOGY
+            ================================================== -->
+
+            <div class="bigger-picture-section">
+
+                <div class="bigger-picture-header">
+
+                    <p class="eyebrow">
+                        07 • FROM CLIMATE TO BIOLOGY
+                    </p>
+
+                    <h3>
+                        The climate problem begins to look
+                        different when we zoom in.
+                    </h3>
+
+                    <p>
+                        We can see methane in atmospheric data and
+                        maps, but its source is biological. To understand
+                        how methane might be reduced, we need to move
+                        from the scale of regions and climate systems
+                        down to the scale of the rumen and its microbes.
+                    </p>
+
+                </div>
+
+
+                <div class="climate-pathway">
+
+                    <div class="climate-node earth-node">
+
+                        <div class="node-icon">
+                            🌎
+                        </div>
+
+                        <span>
+                            CLIMATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="climate-line">
+
+                        <div class="traveling-particle"></div>
+
+                    </div>
+
+
+                    <div class="climate-node methane-node">
+
+                        <div class="node-icon">
+                            CH4
+                        </div>
+
+                        <span>
+                            METHANE
+                        </span>
+
+                    </div>
+
+
+                    <div class="climate-line">
+
+                        <div class="traveling-particle"></div>
+
+                    </div>
+
+
+                    <div class="climate-node rumen-node">
+
+                        <div class="node-icon">
+                            ◉
+                        </div>
+
+                        <span>
+                            RUMEN
+                        </span>
+
+                    </div>
+
+
+                    <div class="climate-line">
+
+                        <div class="traveling-particle"></div>
+
+                    </div>
+
+
+                    <div class="climate-node microbe-node">
+
+                        <div class="node-icon">
+                            🦠
+                        </div>
+
+                        <span>
+                            MICROBES
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bigger-picture-text">
+
+                    <p>
+                        If methane is produced by microbes inside the
+                        rumen, then understanding those microbes may
+                        help researchers identify new ways to reduce
+                        emissions.
+                    </p>
+
+                    <p>
+                        That brings us to the next part of the project:
+                        the biology of the rumen.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 REFERENCES
+            ================================================== -->
+
+            <div class="story-section climate-references">
+
+                <p class="eyebrow">
+                    SOURCES + REFERENCES
+                </p>
+
+                <h3>
+                    Following the evidence.
+                </h3>
+
+                <p>
+                    The climate science in this section is based on
+                    scientific and institutional sources. Additional
+                    sources will be added as the GIS data and regional
+                    emission estimates are finalized.
+                </p>
+
+
+                <div class="reference-list">
+
+                    <a
+                        href="https://www.unep.org/explore-topics/energy/facts-about-methane"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        United Nations Environment Programme
+                        • Facts About Methane ↗
+                    </a>
+
+
+                    <a
+                        href="https://www.ipcc.ch/report/ar6/wg1/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Intergovernmental Panel on Climate Change
+                        • Climate Change 2021: The Physical Science Basis ↗
+                    </a>
+
+
+                    <a
+                        href="https://www.fao.org/3/i3437e/i3437e.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Food and Agriculture Organization
+                        • Tackling Climate Change Through Livestock ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RETURN
+            ================================================== -->
+
+            <div class="story-return">
+
+                <button
+                    id="backFromClimate"
+                    class="back-button"
+                >
+                    ← BACK TO HIDDEN CLIMATE COST
+                </button>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
 
 
 
@@ -463,11 +1351,9 @@
                 </h2>
 
                 <p class="story-intro">
-
                     Cattle related methane emissions are connected to
                     biology, agriculture, climate change, land use,
                     and the communities that depend on these systems.
-
                 </p>
 
             </div>
@@ -510,22 +1396,18 @@
                 </h3>
 
                 <p>
-
                     Cattle digest plant material through fermentation
                     in the rumen, a specialized digestive chamber filled
                     with microorganisms. Some of these microorganisms,
                     called methanogenic archaea, produce methane as part
                     of their metabolism.
-
                 </p>
 
                 <p>
-
                     Methane leaves the animal and enters the atmosphere.
                     When this process occurs across millions of cattle,
                     a biological process occurring inside individual
                     animals contributes to a much larger climate problem.
-
                 </p>
 
             </div>
@@ -536,46 +1418,109 @@
                  INTERSECTIONALITY
             ================================================== -->
 
-            <div class="story-section">
+            <div class="story-section intersectionality-section">
 
                 <p class="eyebrow">
                     02 • INTERSECTIONALITY
                 </p>
 
                 <h3>
-                    The climate problem does not affect everyone
+                    Climate change does not affect every community
                     in the same way.
                 </h3>
 
                 <p>
-
-                    Cattle production is connected to much more than
-                    methane. Agricultural systems depend on land, water,
-                    labor, transportation, and surrounding communities.
-
+                    Cattle production is part of a larger system that
+                    connects animals, agriculture, climate, land, labor,
+                    and communities. Because these systems overlap,
+                    the effects of climate change can also overlap.
+                    A region can simultaneously be an important area
+                    for livestock production, experience greater heat
+                    stress, and contain communities with higher levels
+                    of social vulnerability.
                 </p>
 
                 <p>
+                    The map below helps us see those relationships
+                    spatially. It does not suggest that every place with
+                    cattle is vulnerable, or that every vulnerable
+                    community experiences the same climate pressures.
+                    Instead, it highlights specific places where these
+                    factors intersect.
+                </p>
 
-                    Climate change can intensify existing pressures on
-                    these systems through increasing temperatures,
-                    drought, water scarcity, and changing environmental
-                    conditions. The people who work in agriculture and
-                    the communities located near agricultural production
-                    can therefore experience climate impacts differently
-                    depending on where they live, the work they do, and
-                    the resources available to them.
 
+                <!-- =================================================
+                     INTERSECTIONALITY MAP
+                ================================================== -->
+
+                <div class="story-map-section intersectionality-map-section">
+
+                    <div class="story-map-header">
+
+                        <div>
+
+                            <p class="eyebrow">
+                                GIS • CLIMATE + COMMUNITIES
+                            </p>
+
+                            <h4>
+                                Cattle, Climate Stress,
+                                and Community Vulnerability
+                            </h4>
+
+                        </div>
+
+                        <span class="map-tag">
+                            ARC GIS
+                        </span>
+
+                    </div>
+
+
+                    <div class="story-map-frame">
+
+                        <arcgis-embedded-map
+                            item-id="a7b16602e5234b5fa01ef2648243a27c"
+                            theme="dark"
+                            time-zone-label-enabled
+                            center="-100,38"
+                            scale="30000000"
+                            portal-url="https://ucsdonline.maps.arcgis.com"
+                        >
+                        </arcgis-embedded-map>
+
+                    </div>
+
+
+                    <p class="map-caption">
+
+                        This map overlays livestock density, heat severity,
+                        and the CDC Social Vulnerability Index, showing
+                        where cattle production, climate stress, and
+                        community vulnerability intersect.
+
+                    </p>
+
+                </div>
+
+
+                <p>
+                    These areas matter because climate interventions
+                    affect real places where people already live and
+                    work. Agricultural systems already face environmental
+                    pressures, and different communities may have
+                    different levels of access to new technologies.
                 </p>
 
                 <p>
-
-                    This means that a technological solution cannot be
-                    evaluated only by asking whether it reduces methane.
-                    We also need to ask who develops the technology,
-                    who has access to it, who benefits from it, and
-                    who may carry the risks or consequences.
-
+                    This changes the question we ask about CRISPR.
+                    It is not enough to ask whether modifying rumen
+                    microbes could reduce methane emissions. We also
+                    need to ask who would have access to that technology,
+                    who would benefit from it, what costs might fall on
+                    agricultural communities, and whether the benefits
+                    of a climate intervention would be distributed fairly.
                 </p>
 
             </div>
@@ -597,33 +1542,27 @@
                 </h3>
 
                 <p>
-
                     Methane begins with a biological process inside the
                     rumen, but its effects extend beyond the animal.
                     Cattle production depends on land, water, feed,
                     labor, and infrastructure, connecting microbial
                     processes to larger agricultural systems.
-
                 </p>
 
                 <p>
-
                     As climate change increases pressure on agricultural
                     systems, the consequences can extend to the people
                     who work within them and the communities that depend
                     on them. This creates a connection between a process
                     at the microbial scale and problems experienced at
                     the community and global scales.
-
                 </p>
 
                 <p>
-
                     Understanding these connections allows us to ask a
                     larger question: if biology can contribute to the
                     climate problem, can biology also become part of
                     the solution?
-
                 </p>
 
             </div>
@@ -647,29 +1586,11 @@
                     </h3>
 
                     <p>
-
                         Understanding where methane comes from is only
                         the beginning. To evaluate whether biological
-                        interventions could become climate solutions,
+                        interventions could help reduce emissions,
                         we need to understand the larger systems they
                         would enter.
-
-                    </p>
-
-                </div>
-
-
-                <div class="bigger-picture-text">
-
-                    <p>
-
-                        This project moves from the biology of methane
-                        production, to the landscapes where cattle
-                        production occurs, to the communities connected
-                        to agricultural systems, and finally to the
-                        possibilities and limitations of emerging
-                        biological interventions.
-
                     </p>
 
                 </div>
@@ -693,7 +1614,6 @@
 
             </div>
 
-
         </div>
 
     </div>
@@ -702,7 +1622,6 @@
 
     <!-- =====================================================
          BIOLOGY STORY PANEL
-         KEPT AS PROVIDED
     ====================================================== -->
 
     <div
@@ -723,10 +1642,6 @@
         <div class="story-inner">
 
 
-            <!-- =================================================
-                 BIOLOGY HEADER
-            ================================================== -->
-
             <div class="story-header">
 
                 <p class="eyebrow">
@@ -739,21 +1654,15 @@
                 </h2>
 
                 <p class="story-intro">
-
                     A cow's digestive system contains a complex
                     microbial community that helps break down food.
                     Some of those microbes produce methane as part
                     of their normal metabolism.
-
                 </p>
 
             </div>
 
 
-
-            <!-- =================================================
-                 RUMEN IMAGE
-            ================================================== -->
 
             <div class="biology-image-block">
 
@@ -764,24 +1673,23 @@
                 >
 
                 <p class="image-caption">
+
                     The rumen is a fermentation chamber where microbial
                     communities break down plant material during digestion.
+
                     <br>
+
                     <span>
                         Source: Mrutu et al. (2025),
                         <em>Frontiers in Animal Science</em>.
                         DOI: 10.3389/fanim.2025.1489212.
                     </span>
+
                 </p>
 
             </div>
 
 
-
-            <!-- =================================================
-                 SECTION 01
-                 WHAT HAPPENS INSIDE THE RUMEN
-            ================================================== -->
 
             <div class="story-section">
 
@@ -839,7 +1747,7 @@
                     <div class="pathway-arrow">→</div>
 
                     <div class="pathway-item methane-pathway">
-                        <span class="pathway-label">CH₄</span>
+                        <span class="pathway-label">CH4</span>
                         <span class="pathway-sub">methane</span>
                     </div>
 
@@ -848,11 +1756,6 @@
             </div>
 
 
-
-            <!-- =================================================
-                 SECTION 02
-                 WHY METHANE MATTERS
-            ================================================== -->
 
             <div class="story-section methane-data-section">
 
@@ -866,18 +1769,18 @@
 
                 <p>
                     Methane is a powerful greenhouse gas that traps
-                    substantially more heat than carbon dioxide over
-                    shorter time periods. The United Nations Environment
-                    Programme reports that methane is responsible for
-                    approximately 30% of the rise in global temperatures
-                    since the Industrial Revolution.
+                    substantially more heat than CO2 over shorter
+                    time periods. The United Nations Environment
+                    Programme reports that methane is responsible
+                    for approximately 30% of the rise in global
+                    temperatures since the Industrial Revolution.
                 </p>
 
                 <p>
                     Methane also remains in the atmosphere for a much
-                    shorter time than carbon dioxide. That combination
-                    makes methane reduction especially important for
-                    slowing near term warming.
+                    shorter time than CO2. That combination makes
+                    methane reduction especially important for slowing
+                    near term warming.
                 </p>
 
 
@@ -899,7 +1802,7 @@
                     <div class="impact-stat">
 
                         <div class="impact-number">
-                            ≈30%
+                            30%
                         </div>
 
                         <div class="impact-copy">
@@ -914,67 +1817,28 @@
 
                     </div>
 
-
-                    <div class="impact-explanation">
-
-                        <div class="impact-item">
-
-                            <span>
-                                WHY IT MATTERS
-                            </span>
-
-                            <p>
-                                Methane is much more effective than
-                                carbon dioxide at trapping heat over
-                                shorter time periods.
-                            </p>
-
-                        </div>
+                </div>
 
 
-                        <div class="impact-item">
+                <div class="data-source">
 
-                            <span>
-                                WHY ACT NOW
-                            </span>
+                    <span>
+                        SOURCE
+                    </span>
 
-                            <p>
-                                Methane has a relatively short
-                                atmospheric lifetime, so reducing
-                                emissions can slow near term warming.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="data-source">
-
-                        <span>
-                            SOURCE
-                        </span>
-
-                        <a
-                            href="https://www.unep.org/explore-topics/energy/facts-about-methane"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            United Nations Environment Programme • Facts About Methane ↗
-                        </a>
-
-                    </div>
+                    <a
+                        href="https://www.unep.org/explore-topics/energy/facts-about-methane"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        United Nations Environment Programme • Facts About Methane ↗
+                    </a>
 
                 </div>
 
             </div>
 
 
-
-            <!-- =================================================
-                 SECTION 03
-                 WHERE ARE THE CATTLE
-            ================================================== -->
 
             <div class="story-map-section">
 
@@ -1000,44 +1864,27 @@
 
 
                 <p class="map-intro">
-
                     Cattle are not distributed evenly across the
                     landscape. Production is concentrated in particular
                     agricultural regions, meaning methane emissions are
                     also concentrated in specific places.
-
                 </p>
 
                 <p class="map-intro">
-
                     Knowing where cattle are helps us connect the
                     biological source of methane to the physical
-                    landscapes where emissions occur. Spatial data can
-                    reveal overlaps between livestock production,
-                    agricultural land, water resources, environmental
-                    conditions, and nearby communities.
-
-                </p>
-
-                <p class="map-intro">
-
-                    Mapping these patterns is important because a climate
-                    solution does not exist in isolation. Where an
-                    intervention is developed, who uses it, and which
-                    agricultural communities are affected can all depend
-                    on where cattle production is concentrated.
-
+                    landscapes where emissions occur.
                 </p>
 
 
                 <div class="story-map-frame">
 
                     <arcgis-embedded-map
-                        item-id="a30a7ac6f0334bec962c206678322a4e"
+                        item-id="73481ada51724e1eaaa3552c5fd9e308"
                         theme="dark"
                         time-zone-label-enabled
-                        center="-115.45365247603817,32.90057134578571"
-                        scale="1155581.108577"
+                        center="-98,38"
+                        scale="35000000"
                         portal-url="https://www.arcgis.com"
                     >
                     </arcgis-embedded-map>
@@ -1057,11 +1904,6 @@
             </div>
 
 
-
-            <!-- =================================================
-                 SECTION 04
-                 CRISPR + RUMEN MICROBIOME
-            ================================================== -->
 
             <div class="story-section crispr-section">
 
@@ -1131,7 +1973,6 @@
                 </div>
 
 
-
                 <div class="research-feature">
 
                     <div class="research-content">
@@ -1185,7 +2026,6 @@
                         A CRISPR based methane reduction treatment
                         is not currently an established treatment
                         used in cattle.
-
                     </p>
 
                 </div>
@@ -1193,11 +2033,6 @@
             </div>
 
 
-
-            <!-- =================================================
-                 SECTION 05
-                 MOLECULE
-            ================================================== -->
 
             <div class="story-section molecule-section">
 
@@ -1286,183 +2121,172 @@
                 </div>
 
 
-                <div class="molecule-connection">
+                <div class="molecule-climate-transition">
 
                     <p class="eyebrow">
                         FROM MOLECULE TO CLIMATE
                     </p>
 
                     <p>
-                        Understanding the proteins involved in methane
-                        production helps researchers identify the
-                        biological processes that could potentially
-                        be altered. CRISPR provides one possible
-                        molecular tool for investigating those
-                        processes within the microbes that carry them
-                        out.
+                        Understanding the molecules involved in methane
+                        production helps researchers identify where methane
+                        could potentially be reduced. Molecular tools such
+                        as CRISPR connect biology to larger questions about
+                        agriculture, climate change, and society, reminding
+                        us that scientific innovations must also consider
+                        who benefits, who faces potential risks, and who has
+                        access to emerging technologies.
                     </p>
+
+                </div>
+
+
+                <div class="bigger-picture-section">
+
+                    <div class="bigger-picture-header">
+
+                        <p class="eyebrow">
+                            07 • THE BIGGER PICTURE
+                        </p>
+
+                        <h3>
+                            From the rumen to the climate.
+                        </h3>
+
+                        <p>
+                            A process happening inside a cow can connect
+                            to a global climate problem.
+                        </p>
+
+                    </div>
+
+
+                    <div class="climate-pathway">
+
+                        <div class="climate-node cow-node">
+
+                            <div class="node-icon">
+                                🐄
+                            </div>
+
+                            <span>
+                                COW
+                            </span>
+
+                        </div>
+
+
+                        <div class="climate-line">
+
+                            <div class="traveling-particle"></div>
+
+                        </div>
+
+
+                        <div class="climate-node rumen-node">
+
+                            <div class="node-icon">
+                                ◉
+                            </div>
+
+                            <span>
+                                RUMEN
+                            </span>
+
+                        </div>
+
+
+                        <div class="climate-line">
+
+                            <div class="traveling-particle"></div>
+
+                        </div>
+
+
+                        <div class="climate-node microbe-node">
+
+                            <div class="node-icon">
+                                🦠
+                            </div>
+
+                            <span>
+                                MICROBES
+                            </span>
+
+                        </div>
+
+
+                        <div class="climate-line">
+
+                            <div class="traveling-particle"></div>
+
+                        </div>
+
+
+                        <div class="climate-node methane-node">
+
+                            <div class="node-icon">
+                                CH4
+                            </div>
+
+                            <span>
+                                METHANE
+                            </span>
+
+                        </div>
+
+
+                        <div class="climate-line">
+
+                            <div class="traveling-particle"></div>
+
+                        </div>
+
+
+                        <div class="climate-node earth-node">
+
+                            <div class="node-icon">
+                                🌎
+                            </div>
+
+                            <span>
+                                CLIMATE
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bigger-picture-text">
+
+                        <p>
+                            Millions of cattle produce methane through
+                            the activity of microbes in their digestive
+                            systems. When those emissions are repeated
+                            across agricultural systems around the world,
+                            a process occurring at the scale of a microbial
+                            community becomes part of the global climate
+                            system.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="story-return">
+
+                    <button
+                        id="backToMain"
+                        class="back-button"
+                    >
+                        ← BACK TO HIDDEN CLIMATE COST
+                    </button>
 
                 </div>
 
             </div>
-
-
-
-            <!-- =================================================
-                 SECTION 07
-                 BIGGER PICTURE
-            ================================================== -->
-
-            <div class="bigger-picture-section">
-
-                <div class="bigger-picture-header">
-
-                    <p class="eyebrow">
-                        07 • THE BIGGER PICTURE
-                    </p>
-
-                    <h3>
-                        From the rumen to the climate.
-                    </h3>
-
-                    <p>
-                        A process happening inside a cow can connect
-                        to a global climate problem.
-                    </p>
-
-                </div>
-
-
-                <div class="climate-pathway">
-
-                    <div class="climate-node cow-node">
-
-                        <div class="node-icon">
-                            🐄
-                        </div>
-
-                        <span>
-                            COW
-                        </span>
-
-                    </div>
-
-
-                    <div class="climate-line">
-
-                        <div class="traveling-particle"></div>
-
-                    </div>
-
-
-                    <div class="climate-node rumen-node">
-
-                        <div class="node-icon">
-                            ◉
-                        </div>
-
-                        <span>
-                            RUMEN
-                        </span>
-
-                    </div>
-
-
-                    <div class="climate-line">
-
-                        <div class="traveling-particle"></div>
-
-                    </div>
-
-
-                    <div class="climate-node microbe-node">
-
-                        <div class="node-icon">
-                            🦠
-                        </div>
-
-                        <span>
-                            MICROBES
-                        </span>
-
-                    </div>
-
-
-                    <div class="climate-line">
-
-                        <div class="traveling-particle"></div>
-
-                    </div>
-
-
-                    <div class="climate-node methane-node">
-
-                        <div class="node-icon">
-                            CH₄
-                        </div>
-
-                        <span>
-                            METHANE
-                        </span>
-
-                    </div>
-
-
-                    <div class="climate-line">
-
-                        <div class="traveling-particle"></div>
-
-                    </div>
-
-
-                    <div class="climate-node earth-node">
-
-                        <div class="node-icon">
-                            🌎
-                        </div>
-
-                        <span>
-                            CLIMATE
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="bigger-picture-text">
-
-                    <p>
-                        Millions of cattle produce methane through
-                        the activity of microbes in their digestive
-                        systems. When those emissions are repeated
-                        across agricultural systems around the world,
-                        a process occurring at the scale of a microbial
-                        community becomes part of the global climate
-                        system.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 RETURN
-            ================================================== -->
-
-            <div class="story-return">
-
-                <button
-                    id="backToMain"
-                    class="back-button"
-                >
-                    ← BACK TO HIDDEN CLIMATE COST
-                </button>
-
-            </div>
-
 
         </div>
 
@@ -1476,6 +2300,152 @@
 
     <script src="script.js"></script>
 
+
+    <!-- =====================================================
+         CLIMATE PANEL NAVIGATION
+    ====================================================== -->
+
+    <script>
+
+        const climatePanel =
+            document.getElementById("climatePanel");
+
+        const closeClimate =
+            document.getElementById("closeClimate");
+
+        const backFromClimate =
+            document.getElementById("backFromClimate");
+
+        const climateNav =
+            document.querySelector(
+                '.nav-item[data-section="climate"]'
+            );
+
+
+        function openClimatePanel() {
+
+            if (!climatePanel) {
+                return;
+            }
+
+
+            document.querySelectorAll(
+                ".info-panel, .story-panel"
+            ).forEach(panel => {
+
+                panel.classList.remove("open");
+
+                panel.setAttribute(
+                    "aria-hidden",
+                    "true"
+                );
+
+            });
+
+
+            climatePanel.classList.add("open");
+
+            climatePanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+
+            climatePanel.scrollTop = 0;
+
+        }
+
+
+        if (climateNav) {
+
+            climateNav.addEventListener(
+                "click",
+                event => {
+
+                    event.stopImmediatePropagation();
+
+                    document
+                        .querySelectorAll(".nav-item")
+                        .forEach(nav => {
+
+                            nav.classList.remove("active");
+
+                        });
+
+
+                    climateNav.classList.add("active");
+
+                    openClimatePanel();
+
+                },
+                true
+            );
+
+        }
+
+
+        if (closeClimate) {
+
+            closeClimate.addEventListener(
+                "click",
+                () => {
+
+                    climatePanel.classList.remove("open");
+
+                    climatePanel.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+                }
+            );
+
+        }
+
+
+        if (backFromClimate) {
+
+            backFromClimate.addEventListener(
+                "click",
+                () => {
+
+                    climatePanel.classList.remove("open");
+
+                    climatePanel.setAttribute(
+                        "aria-hidden",
+                        "true"
+                    );
+
+
+                    document
+                        .querySelectorAll(".nav-item")
+                        .forEach(nav => {
+
+                            nav.classList.remove("active");
+
+                        });
+
+
+                    const overviewButton =
+                        document.querySelector(
+                            '.nav-item[data-section="overview"]'
+                        );
+
+
+                    if (overviewButton) {
+
+                        overviewButton.classList.add("active");
+
+                    }
+
+                }
+            );
+
+        }
+
+    </script>
+
 </body>
 
 </html>
+```
