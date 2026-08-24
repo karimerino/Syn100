@@ -416,6 +416,43 @@ if (backToMain) {
     });
 
 }
+/* =========================================================
+BACK FROM OVERVIEW TO MAIN
+========================================================= */
+
+const backFromOverview =
+    document.getElementById("backFromOverview");
+
+
+if (backFromOverview) {
+
+    backFromOverview.addEventListener("click", () => {
+
+        closeAllPanels();
+
+
+        const overviewButton =
+            document.querySelector(
+                '.nav-item[data-section="overview"]'
+            );
+
+
+        if (overviewButton) {
+
+            navItems.forEach(nav => {
+
+                nav.classList.remove("active");
+
+            });
+
+
+            overviewButton.classList.add("active");
+
+        }
+
+    });
+
+}
 
 
 /* =========================================================
