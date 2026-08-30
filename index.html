@@ -795,165 +795,167 @@
 
 
 
-            <!-- =================================================
-                 SECTION 04
-                 GIS MAP SHELL
-            ================================================== -->
+            <!-- ================================================= 
+     SECTION 04
+     CALIFORNIA DAIRY METHANE MAP
+================================================== -->
 
-            <div class="story-map-section climate-map-section">
+<div class="story-map-section climate-map-section">
 
-                <div class="story-map-header">
+    <div class="story-map-header">
 
-                    <div>
+        <div>
 
-                        <p class="eyebrow">
-                            04 • SPATIAL DATA
-                        </p>
+            <p class="eyebrow">
+                04 • SPATIAL DATA
+            </p>
 
-                        <h3>
-                            Where does methane fit into
-                            the larger greenhouse gas problem?
-                        </h3>
+            <h3>
+                Where is dairy methane concentrated?
+            </h3>
 
-                    </div>
+        </div>
 
-                    <span class="map-tag">
-                        ARC GIS
-                    </span>
+        <span class="map-tag">
+            CALIFORNIA
+        </span>
 
-                </div>
-
-
-                <p class="map-intro">
-                    Greenhouse gas emissions are not distributed
-                    evenly across space. Mapping emissions can help
-                    us see where methane is concentrated, where total
-                    greenhouse gas emissions are high, and how those
-                    patterns overlap with cattle production.
-                </p>
+    </div>
 
 
-                <div class="story-map-frame climate-map-placeholder">
-
-                    <div class="map-placeholder-content">
-
-                        <div class="map-placeholder-grid"></div>
-
-                        <div class="map-placeholder-center">
-
-                            <span class="placeholder-icon">
-                                GIS
-                            </span>
-
-                            <p class="eyebrow">
-                                ARC GIS MAP
-                            </p>
-
-                            <h4>
-                                Greenhouse Gas Emissions
-                            </h4>
-
-                            <p>
-                                Methane • CO2 • Livestock
-                            </p>
-
-                            <span class="placeholder-status">
-                                MAP IN DEVELOPMENT
-                            </span>
-
-                        </div>
-
-                        <div class="placeholder-corner top-left">
-                            METHANE
-                        </div>
-
-                        <div class="placeholder-corner top-right">
-                            CO2
-                        </div>
-
-                        <div class="placeholder-corner bottom-left">
-                            LIVESTOCK
-                        </div>
-
-                        <div class="placeholder-corner bottom-right">
-                            REGION
-                        </div>
-
-                    </div>
-
-                </div>
+    <p class="map-intro">
+        The patterns described at the global scale become easier to see
+        when we look at California. Dairy production is concentrated in
+        specific regions of the state, creating corresponding
+        concentrations of methane emissions.
+    </p>
 
 
-                <p class="map-caption">
+    <!-- =================================================
+         CALIFORNIA DAIRY METHANE MAP
+    ================================================== -->
 
-                    <strong>
-                        Mapping the larger greenhouse gas picture.
-                    </strong>
+    <div class="story-map-frame climate-map-image"
+         style="height: auto !important; max-height: none !important; overflow: visible !important;">
 
-                    This map will show greenhouse gas emissions
-                    across regions, with methane highlighted alongside
-                    total emissions and cattle or livestock distribution.
-                    Comparing these layers will help us examine where
-                    methane contributes to the broader greenhouse gas
-                    problem and where cattle production is concentrated.
+        <img
+            src="images/dairy-methane-pic.jpg"
+            alt="Estimated annual methane emissions from California dairy farms in 2019"
+            style="display: block !important; width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain !important;"
+        >
 
-                </p>
+    </div>
 
 
-                <div class="map-methodology">
+    <!-- =================================================
+         FIGURE CAPTION
+    ================================================== -->
 
-                    <div>
+    <p class="map-caption">
 
-                        <span>
-                            PLANNED LAYERS
-                        </span>
+        <strong>
+            California dairy methane emissions, 2019.
+        </strong>
 
-                        <p>
-                            Methane emissions
-                        </p>
+        Estimated annual methane emissions from dairy farms are shown
+        across California. The map combines methane from enteric
+        fermentation and manure management at approximately
+        10-kilometer spatial resolution.
 
-                    </div>
+    </p>
 
-                    <div>
 
-                        <span>
-                            TOTAL EMISSIONS
-                        </span>
+    <!-- =================================================
+         DATA CONTEXT
+    ================================================== -->
 
-                        <p>
-                            Greenhouse gas emissions
-                        </p>
+    <div class="map-context"
+         style="margin: 2rem auto; max-width: 850px;">
 
-                    </div>
+        <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;">
 
-                    <div>
+            <strong>ENTERIC FERMENTATION</strong><br>
 
-                        <span>
-                            AGRICULTURE
-                        </span>
+            Rumen microbes produce methane as they break down feed.
+            At the scale of California's dairy industry, this biological
+            process becomes a significant source of atmospheric methane.
 
-                        <p>
-                            Cattle and livestock distribution
-                        </p>
+        </p>
 
-                    </div>
 
-                    <div>
+        <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;">
 
-                        <span>
-                            REGION
-                        </span>
+            <strong>MANURE MANAGEMENT</strong><br>
 
-                        <p>
-                            County or regional boundaries
-                        </p>
+            Methane is also produced when manure decomposes under
+            oxygen-limited conditions. The map therefore represents
+            both biological methane production inside cattle and
+            emissions associated with managing their waste.
 
-                    </div>
+        </p>
 
-                </div>
+    </div>
 
-            </div>
 
+    <!-- =================================================
+         SCALE OF THE DATASET
+    ================================================== -->
+
+    <div class="map-scale-note"
+         style="text-align: center; margin: 2rem auto 2.5rem;">
+
+        <span style="
+            display: block;
+            font-size: 0.72rem;
+            letter-spacing: 0.14em;
+            color: #5b7890;
+            margin-bottom: 0.45rem;
+        ">
+            DATASET SCALE
+        </span>
+
+        <strong style="
+            display: block;
+            font-size: 1.15rem;
+            margin-bottom: 0.35rem;
+        ">
+            1,326 California dairy farms
+        </strong>
+
+        <span style="
+            font-size: 0.88rem;
+            opacity: 0.75;
+        ">
+            Estimated emissions for 2019 • approximately 10 km resolution
+        </span>
+
+    </div>
+
+
+    <!-- =================================================
+         SOURCE
+    ================================================== -->
+
+    <p class="map-source"
+       style="
+           max-width: 850px;
+           margin: 0 auto 2rem;
+           font-size: 0.78rem;
+           line-height: 1.6;
+           opacity: 0.7;
+       ">
+
+        <strong>DATA SOURCE</strong><br>
+
+        Marklein, A. R., et al. (2021).
+        <em>
+            Methane Emissions from Dairy Sources (Vista-CA),
+            State of California, USA, 2019.
+        </em>
+        ORNL DAAC.
+
+    </p>
+        </div>
 
 
             <!-- =================================================
