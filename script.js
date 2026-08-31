@@ -58,19 +58,6 @@ const sections = {
     },
 
 
-    crispr: {
-
-        number: "05",
-
-        title:
-            "Microbial intervention.",
-
-        description:
-            "Researchers are investigating whether microbial communities in the rumen could eventually be altered using genetic tools such as CRISPR. The goal is to understand whether changing specific microbes or their metabolic pathways could reduce methane production."
-
-    },
-
-
     justice: {
 
         number: "06",
@@ -119,6 +106,14 @@ const biologyPanel =
     document.getElementById("biologyPanel");
 
 
+const scalingPanel =
+    document.getElementById("scalingPanel");
+
+
+const justicePanel =
+    document.getElementById("justicePanel");
+
+
 const closePanel =
     document.getElementById("closePanel");
 
@@ -131,8 +126,24 @@ const closeBiology =
     document.getElementById("closeBiology");
 
 
+const closeScaling =
+    document.getElementById("closeScaling");
+
+
+const closeJustice =
+    document.getElementById("closeJustice");
+
+
 const backToMain =
     document.getElementById("backToMain");
+
+
+const backFromScaling =
+    document.getElementById("backFromScaling");
+
+
+const backFromJustice =
+    document.getElementById("backFromJustice");
 
 
 const panelNumber =
@@ -182,6 +193,30 @@ function closeAllPanels() {
         biologyPanel.classList.remove("open");
 
         biologyPanel.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    if (scalingPanel) {
+
+        scalingPanel.classList.remove("open");
+
+        scalingPanel.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    if (justicePanel) {
+
+        justicePanel.classList.remove("open");
+
+        justicePanel.setAttribute(
             "aria-hidden",
             "true"
         );
@@ -243,6 +278,56 @@ function openSection(sectionName) {
             biologyPanel.scrollTop = 0;
 
             initializeMolstar();
+
+        }
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       SCALING THE SOLUTION
+       Scaling remains its own full story panel.
+       ===================================================== */
+
+    if (sectionName === "scaling") {
+
+        if (scalingPanel) {
+
+            scalingPanel.classList.add("open");
+
+            scalingPanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            scalingPanel.scrollTop = 0;
+
+        }
+
+        return;
+
+    }
+
+
+    /* =====================================================
+       CLIMATE JUSTICE
+       Climate Justice remains its own full story panel.
+       ===================================================== */
+
+    if (sectionName === "justice") {
+
+        if (justicePanel) {
+
+            justicePanel.classList.add("open");
+
+            justicePanel.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            justicePanel.scrollTop = 0;
 
         }
 
@@ -384,6 +469,36 @@ if (closeBiology) {
 
 
 /* =========================================================
+CLOSE SCALING PANEL
+========================================================= */
+
+if (closeScaling) {
+
+    closeScaling.addEventListener("click", () => {
+
+        closeAllPanels();
+
+    });
+
+}
+
+
+/* =========================================================
+CLOSE CLIMATE JUSTICE PANEL
+========================================================= */
+
+if (closeJustice) {
+
+    closeJustice.addEventListener("click", () => {
+
+        closeAllPanels();
+
+    });
+
+}
+
+
+/* =========================================================
 BACK TO MAIN
 ========================================================= */
 
@@ -416,6 +531,8 @@ if (backToMain) {
     });
 
 }
+
+
 /* =========================================================
 BACK FROM OVERVIEW TO MAIN
 ========================================================= */
@@ -427,6 +544,76 @@ const backFromOverview =
 if (backFromOverview) {
 
     backFromOverview.addEventListener("click", () => {
+
+        closeAllPanels();
+
+
+        const overviewButton =
+            document.querySelector(
+                '.nav-item[data-section="overview"]'
+            );
+
+
+        if (overviewButton) {
+
+            navItems.forEach(nav => {
+
+                nav.classList.remove("active");
+
+            });
+
+
+            overviewButton.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+BACK FROM SCALING TO MAIN
+========================================================= */
+
+if (backFromScaling) {
+
+    backFromScaling.addEventListener("click", () => {
+
+        closeAllPanels();
+
+
+        const overviewButton =
+            document.querySelector(
+                '.nav-item[data-section="overview"]'
+            );
+
+
+        if (overviewButton) {
+
+            navItems.forEach(nav => {
+
+                nav.classList.remove("active");
+
+            });
+
+
+            overviewButton.classList.add("active");
+
+        }
+
+    });
+
+}
+
+
+/* =========================================================
+BACK FROM CLIMATE JUSTICE TO MAIN
+========================================================= */
+
+if (backFromJustice) {
+
+    backFromJustice.addEventListener("click", () => {
 
         closeAllPanels();
 
