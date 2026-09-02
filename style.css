@@ -3915,3 +3915,145 @@ MOBILE
     width: 100%;
     height: auto;
 }
+
+/* =========================================
+   PHASE 1 • PILOT REGIONS
+========================================= */
+
+.phase-one-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin: 30px 0;
+}
+
+.phase-one-card {
+    padding: 28px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    background: rgba(255,255,255,0.045);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.phase-label {
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.phase-one-card h4 {
+    margin: 0 0 14px;
+    font-size: 1.6rem;
+}
+
+.region-description {
+    margin-bottom: 22px;
+    line-height: 1.65;
+    opacity: 0.82;
+}
+
+.gis-intersection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    padding: 13px 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.06);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.gis-intersection span:nth-child(even) {
+    opacity: 0.4;
+}
+
+.why-start {
+    padding-top: 19px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.why-start strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.why-start p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 0.92rem;
+    opacity: 0.78;
+}
+
+@media (max-width: 750px) {
+
+    .phase-one-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+.kmz-placeholder {
+    min-height: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.035);
+}
+
+.kmz-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 62px;
+    height: 62px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.08);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.kmz-placeholder h4 {
+    margin: 0 0 10px;
+    font-size: 1.3rem;
+}
+
+.kmz-placeholder p {
+    max-width: 520px;
+    margin: 0 0 24px;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+.kmz-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.16);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.kmz-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.16);
+}
