@@ -342,28 +342,30 @@
             <div class="modal-line"></div>
 
 
-            <p>
-                This project explores the relationship between cattle
-                agriculture, methane emissions, microbial biology,
-                emerging biotechnology, and climate change.
+                   <p>
+                In this project, we examined the hidden climate cost of
+                cattle agriculture and how methane connects biology,
+                agriculture, intersectionality and climate change.
             </p>
 
 
             <p>
-                Using GIS, scientific research, molecular biology, and
-                visual storytelling, we investigate where cattle
-                production occurs, how methane is produced inside the
-                rumen, and whether emerging technologies such as CRISPR
-                could contribute to future approaches for reducing
-                methane emissions.
+                We used ArcGIS, molecular biology, scientific research, and
+                visual storytelling to explore where cattle production
+                occurs, how rumen microbes produce methane, and how
+                scientists are exploring ways to reduce these emissions.            
             </p>
 
 
             <p>
-                We also consider the people and agricultural communities
-                connected to these systems, asking who has access to new
-                technologies, who benefits from them, and how new
-                approaches can be developed responsibly and fairly.
+                Throughout the project, we considered more than just the
+                science. We looked at the farmers, workers, and agricultural
+                communities connected to cattle production and asked how
+                climate solutions could affect them. By bringing together
+                biology, mapping, climate science, and seven-generations
+                thinking, we explored how the choices we make today could
+                shape cattle agriculture and the communities connected to it
+                in the future.
             </p>
 
 
@@ -869,33 +871,54 @@
          DATA CONTEXT
     ================================================== -->
 
-    <div class="map-context"
-         style="margin: 2rem auto; max-width: 850px;">
+  <div class="map-context" 
+     style="margin: 2rem auto; max-width: 850px;"> 
 
-        <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;">
+    <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;"> 
 
-            <strong>ENTERIC FERMENTATION</strong><br>
+        <strong>ENTERIC FERMENTATION</strong><br> 
 
-            Rumen microbes produce methane as they break down feed.
-            At the scale of California's dairy industry, this biological
-            process becomes a significant source of atmospheric methane.
+        Rumen microbes produce methane as they break down feed. 
+        At the scale of California's dairy industry, this biological 
+        process becomes a significant source of atmospheric methane. 
 
+    </p> 
+
+
+    <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;"> 
+
+        <strong>MANURE MANAGEMENT</strong><br> 
+
+        Methane is also produced when manure decomposes under 
+        oxygen-limited conditions. The map therefore represents 
+        both biological methane production inside cattle and 
+        emissions associated with managing their waste. 
+
+    </p>
+
+
+    <!-- CALIFORNIA METHANE MAP -->
+    <div style="margin-top: 2rem; text-align: center;">
+
+        <h3 style="color: #5b7890; font-size: 1.1rem; letter-spacing: 0.05em;">
+            CALIFORNIA METHANE EMISSION HOTSPOTS
+        </h3>
+
+        <p style="font-size: 0.9rem; line-height: 1.7; color: #5b7890; margin-bottom: 1.5rem;">
+            This map highlights major methane-emitting regions across California,
+            including areas associated with livestock, agriculture, waste, and
+            energy infrastructure.
         </p>
 
-
-        <p style="font-size: 0.95rem; line-height: 1.8; color: #5b7890;">
-
-            <strong>MANURE MANAGEMENT</strong><br>
-
-            Methane is also produced when manure decomposes under
-            oxygen-limited conditions. The map therefore represents
-            both biological methane production inside cattle and
-            emissions associated with managing their waste.
-
-        </p>
+        <img 
+            src="images/methane-emissions.jpg" 
+            alt="California methane emission hotspots"
+            style="width: 100%; max-width: 850px; height: auto; display: block; margin: 0 auto;"
+        >
 
     </div>
 
+</div>
 
     <!-- =================================================
          SCALE OF THE DATASET
@@ -4887,10 +4910,172 @@
 
             </div>
 
+        <        </div>
+
+
+        <!-- =================================================
+             CRISPR TECHNOLOGY • REGULATION + ACCESS
+        ================================================== -->
+
+        <div class="crispr-regulation-block">
+
+            <p class="eyebrow">
+                CRISPR TECHNOLOGY
+            </p>
+
+            <h4>
+                From research to real-world use.
+            </h4>
+
+            <p>
+                CRISPR-based methane reduction is still being developed.
+                A $70 million Audacious Project investment in the Innovative
+                Genomics Institute supports research at UC Berkeley, UC Davis,
+                and UCSF to understand the rumen microbiome, develop delivery
+                systems, and identify ways to reduce methane safely.
+            </p>
+
+
+            <div class="crispr-tech-grid">
+
+                <div class="crispr-tech-card">
+
+                    <span class="crispr-tech-number">
+                        01
+                    </span>
+
+                    <h5>
+                        Edit the cow
+                    </h5>
+
+                    <p>
+                        CRISPR can alter the cow's own DNA. Depending on the
+                        edit, these changes could potentially be inherited
+                        by future generations.
+                    </p>
+
+                </div>
+
+
+                <div class="crispr-tech-card">
+
+                    <span class="crispr-tech-number">
+                        02
+                    </span>
+
+                    <h5>
+                        Edit the rumen
+                    </h5>
+
+                    <p>
+                        Another approach targets methane-producing microbes
+                        inside the rumen without changing the cow's DNA.
+                        Researchers are investigating whether this could
+                        create a long-lasting low-methane microbiome.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- REGULATION MAP -->
+
+            <div class="crispr-regulation-map">
+
+                <div class="cj-map-label">
+                    REGULATION &amp; GLOBAL ACCESS
+                </div>
+
+                <div class="cj-map-image">
+
+                    <img
+                        src="images/regulation.jpg"
+                        alt="Map showing CRISPR research locations and gene-editing regulations"
+                    >
+
+                </div>
+
+                <div class="cj-map-caption">
+
+                    <h5>
+                        Science does not stop at the lab.
+                    </h5>
+
+                    <p>
+                        Countries regulate gene-edited organisms differently.
+                        These differences could affect where the technology
+                        can be used, how cattle are traded, and whether
+                        products can be exported.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCEPTANCE + ACCESS -->
+
+            <div class="crispr-access-grid">
+
+                <div class="crispr-access-box">
+
+                    <span class="crispr-access-label">
+                        WILL PEOPLE ACCEPT IT?
+                    </span>
+
+                    <p>
+                        Scientific approval does not guarantee social acceptance.
+                        Religious and cultural food standards may also affect
+                        whether gene-edited cattle or their products are accepted.
+                    </p>
+
+                </div>
+
+
+                <div class="crispr-access-box">
+
+                    <span class="crispr-access-label">
+                        WHO GETS ACCESS?
+                    </span>
+
+                    <p>
+                        The climate benefit depends on who can actually use the
+                        technology. Affordability and global access matter because
+                        a solution available only to wealthy farms would not
+                        distribute its benefits equally.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- UNCERTAINTY -->
+
+            <div class="research-note crispr-uncertainty">
+
+                <span class="note-marker">
+                    STILL IN DEVELOPMENT
+                </span>
+
+                <p>
+                    Researchers have not yet demonstrated a safe, field-ready
+                    CRISPR treatment for cattle methane. Questions remain about
+                    microbial targets, delivery, long-term stability, animal
+                    health, regulation, and consumer acceptance. CRISPR should
+                    therefore be presented as a potential future solution,
+                    not a technology currently ready for widespread use.
+                </p>
+
+            </div>
+
         </div>
 
 
         <!-- BOTTOM TAKEAWAY -->
+
+        <div class="evaluation-takeaway">
 
         <div class="evaluation-takeaway">
 
@@ -4980,7 +5165,7 @@
             The chart shows the total project cost of California
             dairy climate projects awarded in 2023, grouped by county.
             These projects were supported through California's
-            dairy methane-reduction programs and included practices
+            dairy methane reduction programs and included practices
             intended to reduce greenhouse gas emissions from dairy
             operations.
         </p>
@@ -5471,7 +5656,7 @@
                 Seven-generations thinking asks us to consider how
                 decisions made today may affect people far into the
                 future. This interactive timeline imagines one possible
-                pathway for agricultural methane reduction—from
+                pathway for agricultural methane reduction from
                 research and pilot programs today to the systems
                 inherited by a seventh future generation.
             </p>
@@ -5804,7 +5989,7 @@
                     </h3>
 
                     <p>
-                        Lower-methane practices become part of ordinary
+                        Lower methane practices become part of ordinary
                         agricultural systems rather than experimental
                         programs.
                     </p>
@@ -5869,7 +6054,7 @@
                     <p>
                         The seventh generation inherits the consequences
                         of decisions being made today. Success means more
-                        than reducing methane—it means building an
+                        than reducing methane it means building an
                         agricultural system that is effective, resilient,
                         and equitable.
                     </p>
@@ -6196,10 +6381,7 @@
                 </span>
 
                 <p>
-                    Wildcat helped organize the 2008 “Planning for Seven
-                    Generations” climate change conference, connecting
-                    Indigenous perspectives, climate change, and
-                    long term planning.
+                  Daniel Wildcat's seven-generations thinking helped guide how we approached the future of climate solutions. We used this perspective to think beyond immediate methane reductions and consider how the decisions we make today could affect farmers, agricultural communities, and future generations.
                 </p>
 
             </div>
@@ -6325,7 +6507,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "A new normal",
 
             description:
-                "Lower-methane practices become part of ordinary agricultural systems rather than experimental programs.",
+                "Lower methane practices become part of ordinary agricultural systems rather than experimental programs.",
 
             climate: "LOWER METHANE",
             agriculture: "NORMALIZED",
@@ -6382,7 +6564,7 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "What did we leave behind?",
 
             description:
-                "The seventh generation inherits the consequences of decisions being made today. Success means more than reducing methane—it means building an agricultural system that is effective, resilient, and equitable.",
+                "The seventh generation inherits the consequences of decisions being made today. Success means more than reducing methane it means building an agricultural system that is effective, resilient, and equitable.",
 
             climate: "LEGACY",
             agriculture: "RESILIENT",
